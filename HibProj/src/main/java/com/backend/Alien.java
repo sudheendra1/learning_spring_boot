@@ -1,0 +1,57 @@
+package com.backend;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+
+@Entity
+public class Alien {
+    @Id
+    private  int aId;
+    private  String aName;
+    private  String tech;
+    @OneToOne
+    private Laptop laptop;
+
+    public int getaId() {
+        return aId;
+    }
+
+    public void setaId(int aId) {
+        this.aId = aId;
+    }
+
+    public String getaName() {
+        return aName;
+    }
+
+    public void setaName(String aName) {
+        this.aName = aName;
+    }
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
+    public String getTech() {
+        return tech;
+    }
+
+    public void setTech(String tech) {
+        this.tech = tech;
+    }
+
+    @Override
+    public String toString() {
+        return "Alien{" +
+                "aId=" + aId +
+                ", aName='" + aName + '\'' +
+                ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
+                '}';
+    }
+}
