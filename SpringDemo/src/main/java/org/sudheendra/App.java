@@ -24,5 +24,7 @@ public class App
 //        Alien obj2 = (Alien) context.getBean("alien");
 //        System.out.println(obj2.age);
 //        obj2.code();
+
+        Desktop obj2 = (Desktop) context.getBean("comp2");
     }
 }

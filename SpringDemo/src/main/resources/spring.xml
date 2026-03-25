@@ -27,4 +27,9 @@
 <!--    <bean id = "laptop" class = "org.sudheendra.Laptop"> </bean>-->
 
     <bean id = "comp" class = "org.sudheendra.Laptop"> </bean>
+
+<!--    for conflicting ids for objects using primary sets it to it when using autowiring as by type-->
+
+<!--    using lazy-init will create the object only when called not while initializing -->
+    <bean id = "comp2" class = "org.sudheendra.Desktop" lazy-init="true"> </bean>
 </beans>
