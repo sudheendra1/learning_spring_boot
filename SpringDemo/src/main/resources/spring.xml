@@ -5,8 +5,9 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- <bean id = "alien" class = "org.sudheendra.Alien" scope="prototype"> </bean>-->
-    <bean id = "alien" class = "org.sudheendra.Alien">
-    <!--<property name="age" value="21"> </property>-->
+    <bean id = "alien" class = "org.sudheendra.Alien"  autowire="byName">
+    <property name="age" value="24"> </property>
+<!--        <property name="comp" ref="laptop"> </property>-->
 <!--        <constructor-arg  type="org.sudheendra.Laptop" ref="laptop"/>-->
 <!--&lt;!&ndash;        usually works according to sequence but putting type can help change the sequence, works if each type appears only once&ndash;&gt;-->
 <!--        <constructor-arg type="int" value="25"/>-->
@@ -17,12 +18,13 @@
 
 
         <!--       can use names to get more clarity on variables but has to be in sequence, if it has to work without it have to specify constructor properties in the class-->
-        <constructor-arg  name="lap" ref="laptop"/>
-        <constructor-arg name="age" value="25"/>
+<!--        <constructor-arg  name="lap" ref="laptop"/>-->
+<!--        <constructor-arg name="age" value="25"/>-->
 
 
-<!--    <property name="lap" ref="laptop"> </property>-->
+
     </bean>
-    <bean id = "laptop" class = "org.sudheendra.Laptop"> </bean>
+<!--    <bean id = "laptop" class = "org.sudheendra.Laptop"> </bean>-->
 
+    <bean id = "comp" class = "org.sudheendra.Laptop"> </bean>
 </beans>
