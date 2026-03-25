@@ -6,8 +6,22 @@
 
     <!-- <bean id = "alien" class = "org.sudheendra.Alien" scope="prototype"> </bean>-->
     <bean id = "alien" class = "org.sudheendra.Alien">
-    <property name="age" value="21"> </property>
-    <property name="lap" ref="laptop"> </property>
+    <!--<property name="age" value="21"> </property>-->
+<!--        <constructor-arg  type="org.sudheendra.Laptop" ref="laptop"/>-->
+<!--&lt;!&ndash;        usually works according to sequence but putting type can help change the sequence, works if each type appears only once&ndash;&gt;-->
+<!--        <constructor-arg type="int" value="25"/>-->
+
+<!--        <constructor-arg  index="1" ref="laptop"/>-->
+<!--        &lt;!&ndash;       can use index if more are there&ndash;&gt;-->
+<!--        <constructor-arg index="0" value="25"/>-->
+
+
+        <!--       can use names to get more clarity on variables but has to be in sequence, if it has to work without it have to specify constructor properties in the class-->
+        <constructor-arg  name="lap" ref="laptop"/>
+        <constructor-arg name="age" value="25"/>
+
+
+<!--    <property name="lap" ref="laptop"> </property>-->
     </bean>
     <bean id = "laptop" class = "org.sudheendra.Laptop"> </bean>
 
