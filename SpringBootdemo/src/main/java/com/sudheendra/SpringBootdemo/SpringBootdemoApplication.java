@@ -15,6 +15,7 @@ public class SpringBootdemoApplication {
 //		Alien obj = new Alien();
 
 		Alien obj = context.getBean(Alien.class);
+		System.out.println(obj.getAge());
 		obj.code();
 
 
