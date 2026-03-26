@@ -1,4 +1,4 @@
-package com.sudheendra.SpringBootdemo;
+package com.sudheendra.SpringBootdemo.model;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
