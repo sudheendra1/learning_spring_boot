@@ -18,4 +18,7 @@ public class JobPost {
     private String postDesc;
     private  int reqExperience;
     private List<String> postTechStack;
+
+
+
 }
