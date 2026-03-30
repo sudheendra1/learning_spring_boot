@@ -5,7 +5,9 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 </body>
-<h2>Result is: ${result}</h2>
+<h2> Welcome to Earth</h2>
+<p>${alien}</p>
+<p>Welcome to the ${course} world</p>
 
 
 

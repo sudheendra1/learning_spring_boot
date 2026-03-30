@@ -4,11 +4,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
+
+    @ModelAttribute("course")
+    public String courseName(){
+        return "Java";
+    }
 
     @RequestMapping("/")
     public String home(){
@@ -42,13 +49,38 @@ public class HomeController {
 //        return "result.jsp";
 //    }
 
+//
+//    @RequestMapping("add")
+//    public String add(@RequestParam("num1") int num1, @RequestParam("num2") int num2, Model model ){
+//
+//        int result = num1+num2;
+//
+//        model.addAttribute("result",result);
+//
+//
+//        return "result";
+//    }
 
     @RequestMapping("add")
-    public String add(@RequestParam("num1") int num1, @RequestParam("num2") int num2, Model model ){
+    public ModelAndView add(@RequestParam("num1") int num1, @RequestParam("num2") int num2, ModelAndView mv ){
 
         int result = num1+num2;
 
-        model.addAttribute("result",result);
+        mv.addObject("result",result);
+        mv.setViewName("result");
+
+
+        return mv;
+    }
+
+    @RequestMapping("addAlien")
+    public String addAlien(@ModelAttribute("alien") Alien alien, ModelAndView mv ){
+        //modelattribute can be used if the name in html is different or else not needed and also no need for mv can directly return string of result
+
+//        Alien alien = new Alien();
+//        alien.setAid(aid);
+//        alien.setAname(aname);
+
 
 
         return "result";
