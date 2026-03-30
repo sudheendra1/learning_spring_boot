@@ -3,6 +3,7 @@ package com.sudheendra.SpringBootWebDemo;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,7 +14,7 @@ public class HomeController {
     public String home(){
 
         System.out.println("Home Method Called");
-        return "index.jsp";
+        return "index";
     }
 
 //    @RequestMapping("add")
@@ -29,16 +30,28 @@ public class HomeController {
 //        return "result.jsp";
 //    }
 
+//    @RequestMapping("add")
+//    public String add(@RequestParam("num1") int num1, @RequestParam("num2") int num2, HttpSession session){
+//        //can use the request parameter when the variables name in the html code and method mismatch or else they will be autoassigned
+//
+//        int result = num1+num2;
+//
+//        session.setAttribute("result",result);
+//
+//
+//        return "result.jsp";
+//    }
+
+
     @RequestMapping("add")
-    public String add(@RequestParam("num1") int num1, @RequestParam("num2") int num2, HttpSession session){
-        //can use the request parameter when the variables name in the html code and method mismatch or else they will be autoassigned
+    public String add(@RequestParam("num1") int num1, @RequestParam("num2") int num2, Model model ){
 
         int result = num1+num2;
 
-        session.setAttribute("result",result);
+        model.addAttribute("result",result);
 
 
-        return "result.jsp";
+        return "result";
     }
 
 }
