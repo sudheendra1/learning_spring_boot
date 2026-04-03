@@ -1,7 +1,7 @@
 package com.sudheendra.SpringBootRest.service;
 
-import com.sudheendra.JobApp.model.JobPost;
-import com.sudheendra.JobApp.repository.JobRepo;
+import com.sudheendra.SpringBootRest.model.JobPost;
+import com.sudheendra.SpringBootRest.repository.JobRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +26,18 @@ public class JobService {
     public List<JobPost> getAllJobs(){
 
         return jobRepo.getAllJobs();
+    }
+
+    public JobPost getJob(int id){
+        return jobRepo.getJob(id);
+
+    }
+
+    public void updateJob(JobPost jobPost) {
+        jobRepo.updateJob(jobPost);
+    }
+
+    public void deleteJob(int id) {
+        jobRepo.deleteJob(id);
     }
 }

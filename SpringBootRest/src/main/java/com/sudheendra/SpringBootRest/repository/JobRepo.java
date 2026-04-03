@@ -1,6 +1,6 @@
 package com.sudheendra.SpringBootRest.repository;
 
-import com.sudheendra.JobApp.model.JobPost;
+import com.sudheendra.SpringBootRest.model.JobPost;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -41,5 +41,35 @@ public class JobRepo {
         jobs.add(jobPost);
         System.out.println(jobs);
 
+    }
+
+    public JobPost getJob(int id) {
+
+        for(JobPost job: jobs){
+            if(job.getPostId()== id){
+                return job;
+            }
+        }
+        return null;
+    }
+
+    public void updateJob(JobPost jobPost) {
+        for(JobPost jobPost1: jobs){
+            if(jobPost1.getPostId() == jobPost.getPostId()){
+                jobPost1.setPostDesc(jobPost.getPostDesc());
+                jobPost1.setPostProfile(jobPost.getPostProfile());
+                jobPost1.setReqExperience(jobPost.getReqExperience());
+                jobPost1.setPostTechStack(jobPost.getPostTechStack());
+            }
+        }
+    }
+
+    public void deleteJob(int id) {
+
+        for(JobPost job: jobs){
+            if(job.getPostId()== id){
+                jobs.remove(job);
+            }
+        }
     }
 }
