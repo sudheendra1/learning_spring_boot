@@ -35,6 +35,8 @@ public class SpringDataJpaDemoApplication {
 
 
 		System.out.println(repo.findAll());
+		System.out.println(repo.findByName("Sudheendra"));
+		System.out.println(repo.findByMarksGreaterThan(72));
 
 
 
